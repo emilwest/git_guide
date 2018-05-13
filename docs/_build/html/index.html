@@ -1,0 +1,630 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>A Git Reference Guide &mdash; gitGuide May 13 2018 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="#" class="icon icon-home"> gitGuide
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">A Git Reference Guide</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+<li><a class="reference internal" href="#id1">Indices and tables</a></li>
+<li><a class="reference internal" href="#general-lexicon">General lexicon</a></li>
+<li><a class="reference internal" href="#branching">Branching</a><ul>
+<li><a class="reference internal" href="#pull">pull</a></li>
+<li><a class="reference internal" href="#push">push</a></li>
+<li><a class="reference internal" href="#checkout">checkout</a></li>
+<li><a class="reference internal" href="#branch">branch</a></li>
+<li><a class="reference internal" href="#options-git-branch">Options: git branch</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#remote-branches">Remote branches</a></li>
+<li><a class="reference internal" href="#view-commit-history">View commit history</a><ul>
+<li><a class="reference internal" href="#log">log</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#undo-things">Undo things</a><ul>
+<li><a class="reference internal" href="#reflog">reflog</a></li>
+<li><a class="reference internal" href="#reset">reset</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#reverting">Reverting</a></li>
+<li><a class="reference internal" href="#id2">Checkout</a><ul>
+<li><a class="reference internal" href="#clean">clean</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#merge-conflicts">Merge conflicts</a><ul>
+<li><a class="reference internal" href="#aborting-merge">Aborting merge</a></li>
+<li><a class="reference internal" href="#choosing-sides">Choosing sides</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stashing">Stashing</a><ul>
+<li><a class="reference internal" href="#stash">stash</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">gitGuide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>A Git Reference Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="a-git-reference-guide">
+<h1>A Git Reference Guide<a class="headerlink" href="#a-git-reference-guide" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h1>Indices and tables<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+<div class="section" id="general-lexicon">
+<h1>General lexicon<a class="headerlink" href="#general-lexicon" title="Permalink to this headline">¶</a></h1>
+<p>This is a glossary with definition terms for thing like <a class="reference internal" href="#term-origin"><span class="xref std std-term">origin</span></a>:</p>
+<dl class="glossary docutils">
+<dt id="term-the-three-states">The three states</dt>
+<dd><dl class="first last docutils">
+<dt>Git has three main states that your files can reside in: committed, modified, and staged:</dt>
+<dd><dl class="first last docutils">
+<dt>comitted</dt>
+<dd>when the data is safely stored in your local database</dd>
+<dt>modified</dt>
+<dd>you have changed the file but have not committed it to your database yet</dd>
+<dt>staged</dt>
+<dd>you have marked a modified file in its current version to go into your next commit snapshot</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt id="term-snapshot">snapshot</dt>
+<dd>a ‘picture’ of how how your files look when you commit.</dd>
+<dt id="term-commit">commit</dt>
+<dd>[verb] the command of recording the snapshot that was set up in the staging area (with git add &lt;files&gt;).
+[noun] a object with snapshot information: which branch it was comitted in, SHA-1 checksum, etc. This snapshot can be reverted or compared to later.</dd>
+<dt id="term-branch">branch</dt>
+<dd>A moveable pointer to a specific <a class="reference internal" href="#term-commit"><span class="xref std std-term">commit</span></a>.</dd>
+<dt id="term-head">HEAD</dt>
+<dd>tip (latest commit) of the current local branch (cat .git/HEAD). This is a pointer used for git to know which <a class="reference internal" href="#term-branch"><span class="xref std std-term">branch</span></a> you’re currently on.</dd>
+<dt id="term-merge">merge<dt id="term-merging">merging</dt>
+<dd>The process of combining the commits of one branch into the current HEAD branch. Eg: git checkout master; git merge feature-branch; will merge feature-branch into the master branch.</dd>
+<dt id="term-merge-conflict">merge conflict</dt>
+<dd>Occurs when the same part of the same file has been modified differently in the two branches you’re merging together.</dd>
+<dt id="term-origin">origin</dt>
+<dd>an alias that stores the URL of the remote repository
+(see url with: git remote -v )
+(git remote show origin)</dd>
+<dt id="term-remote">remote</dt>
+<dd>refers to a repository which is a version of your project that is hosted on the Internet or network somewhere, commonly github, gitlabs, etc.</dd>
+</dl>
+</div>
+<div class="section" id="branching">
+<h1>Branching<a class="headerlink" href="#branching" title="Permalink to this headline">¶</a></h1>
+<dl class="glossary docutils">
+<dt id="term-git-pull-origin-branch-to-pull">git pull origin &lt;branch-to-pull&gt;</dt>
+<dd>Pull from specific branch</dd>
+<dt id="term-git-push-remote-name-branch-name">git push &lt;remote-name&gt; &lt;branch-name&gt;<dt id="term-git-push-origin-head">git push origin HEAD</dt>
+<dd>Push a branch you want to share to origin. Then, on gitlabs, you can choose which branch you want to submit the merge request to.</dd>
+<dt id="term-git-push-origin-head-integration">git push origin HEAD:integration</dt>
+<dd>Push local branch to a remote branch</dd>
+<dt id="term-git-checkout-branchname">git checkout &lt; branchname &gt;</dt>
+<dd>switch the HEAD pointer to a different branch
+-b &lt; branchname &gt;: create a new branch and switch to it</dd>
+</dl>
+<div class="section" id="pull">
+<h2>pull<a class="headerlink" href="#pull" title="Permalink to this headline">¶</a></h2>
+<p>Pull from specific branch:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span> <span class="n">origin</span> <span class="o">&lt;</span><span class="n">branch</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">pull</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="push">
+<h2>push<a class="headerlink" href="#push" title="Permalink to this headline">¶</a></h2>
+<p>Push a branch you want to share to origin:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="o">&lt;</span><span class="n">branch</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span> <span class="n">OR</span> <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">HEAD</span>
+</pre></div>
+</div>
+<p>Then, on gitlabs, you can choose which branch you want to submit the merge request to.</p>
+<p>Push local branch to a remote branch:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">HEAD</span><span class="p">:</span><span class="n">integration</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="checkout">
+<h2>checkout<a class="headerlink" href="#checkout" title="Permalink to this headline">¶</a></h2>
+<p>switch the HEAD pointer to a different branch:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">&lt;</span> <span class="n">branchname</span> <span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Options:</p>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-b</span></kbd></td>
+<td>create a new branch and switch to it, eg: git checkout -b &lt;branchname&gt;</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="branch">
+<h2>branch<a class="headerlink" href="#branch" title="Permalink to this headline">¶</a></h2>
+<p>shows a list of local branches:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">branch</span>
+</pre></div>
+</div>
+<p>&lt; branchname &gt;  creates a new branch with that name:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">branch</span> <span class="o">&lt;</span><span class="n">branchname</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="options-git-branch">
+<h2>Options: git branch<a class="headerlink" href="#options-git-branch" title="Permalink to this headline">¶</a></h2>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-d</span></kbd></td>
+<td>delete a branch eg: -d &lt;branchname&gt;</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-v</span></kbd></td>
+<td>show the last commit on each local branch</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-v<var>v</var></span></kbd></td>
+<td>see what tracking branches you have set up</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-a</span></kbd></td>
+<td>show local and remote branches</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-v<var>a</var></span></kbd></td>
+<td>show the last commit on each local and remote branch</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--merged</span></kbd></td>
+<td>list which branches are already merged into the working branch (safe to delete)</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--no-merged</span></kbd></td>
+<td>list which branches are not merged into the working branch. can be used to compare branches, eg. what is not merged in this branch compared to the master branch? : git branch –no-merged master</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-m</span></kbd></td>
+<td>rename a branch, eg: git branch -m «old branch» «new branch»</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="remote-branches">
+<h1>Remote branches<a class="headerlink" href="#remote-branches" title="Permalink to this headline">¶</a></h1>
+<dl class="glossary docutils">
+<dt id="term-git-fetch-origin">git fetch origin</dt>
+<dd>To sync with the remote</dd>
+<dt id="term-git-merge-origin-branch">git merge origin/&lt;branch&gt;</dt>
+<dd>To get a local copy of the remote branch</dd>
+<dt id="term-git-checkout-b-my-new-branch-origin-branch">git checkout -b my_new_branch origin/&lt;branch&gt;</dt>
+<dd>create a new branch based origin/&lt;branch&gt;</dd>
+</dl>
+<p>Respresented as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">remote</span><span class="o">&gt;/&lt;</span><span class="n">branch</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">eg</span><span class="p">:</span> <span class="n">origin</span><span class="o">/</span><span class="n">emil_westin</span>
+</pre></div>
+</div>
+<p>If you do some work on your local master branch, and, in the meantime, someone else pushes to the remote branch,
+then your histories move forward differently.</p>
+<p>To sync with the remote, run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">fetch</span> <span class="n">origin</span>
+</pre></div>
+</div>
+<p>This only gives a pointer to the origin/&lt;branch&gt;. To get a local copy, you can:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">merge</span> <span class="n">origin</span><span class="o">/&lt;</span><span class="n">branch</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>or, if you want to create a new branch based on this origin/&lt;branch&gt;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">my_new_branch</span> <span class="n">origin</span><span class="o">/&lt;</span><span class="n">branch</span><span class="o">&gt;</span>
+
+
+       <span class="n">Branch</span> <span class="n">my_new_branch</span> <span class="nb">set</span> <span class="n">up</span> <span class="n">to</span> <span class="n">track</span> <span class="n">remote</span> <span class="n">branch</span> <span class="o">&lt;</span><span class="n">branch</span><span class="o">&gt;</span> <span class="kn">from</span> <span class="nn">origin.</span>
+       <span class="n">Switched</span> <span class="n">to</span> <span class="n">a</span> <span class="n">new</span> <span class="n">branch</span> <span class="s1">&#39;my_new_branch&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="view-commit-history">
+<h1>View commit history<a class="headerlink" href="#view-commit-history" title="Permalink to this headline">¶</a></h1>
+<dl class="glossary docutils">
+<dt id="term-git-log-option">git log [option]</dt>
+<dd>shows the detailed commit history</dd>
+</dl>
+<div class="section" id="log">
+<h2>log<a class="headerlink" href="#log" title="Permalink to this headline">¶</a></h2>
+<p>shows the detailed commit history:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">log</span> <span class="p">[</span><span class="n">option</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Options:</p>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-1</span></kbd></td>
+<td>only shows the last 1 commit</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-p</span></kbd></td>
+<td>shows the line diff for each commit</td></tr>
+</tbody>
+</table>
+<p>-p –word-diff  shows the word diff for each commit</p>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">--stat</span></kbd></td>
+<td>shows stats instead of diff details</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--name-status</span></kbd></td>
+<td>shows a simpler version of stat</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--oneline</span></kbd></td>
+<td>just shows commit comments</td></tr>
+</tbody>
+</table>
+<p>shows a nice commit tree:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">log</span> <span class="o">--</span><span class="n">oneline</span> <span class="o">--</span><span class="nb">all</span> <span class="o">--</span><span class="n">decorate</span> <span class="o">--</span><span class="n">graph</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="undo-things">
+<h1>Undo things<a class="headerlink" href="#undo-things" title="Permalink to this headline">¶</a></h1>
+<dl class="glossary docutils">
+<dt id="term-git-reflog">git reflog</dt>
+<dd>Show previous git reference ids. Returns a &lt;ref&gt;, eg: c5f567</dd>
+<dt id="term-git-reset-option-ref">git reset [option] [&lt;ref&gt;]</dt>
+<dd>Undo a pull or commit</dd>
+<dt id="term-git-commit-amend">git commit –amend</dt>
+<dd>If you want to try the commit again, eg. include more files into the commit:  git commit -m ‘initial commit’ $ git add forgotten_file $ git commit –amend</dd>
+<dt id="term-git-commit-amend-m-new-message">git commit –amend -m “new message”</dt>
+<dd>Re-write the message from last commit</dd>
+</dl>
+<div class="section" id="reflog">
+<h2>reflog<a class="headerlink" href="#reflog" title="Permalink to this headline">¶</a></h2>
+<p>Show previous git reference ids:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">reflog</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="reset">
+<h2>reset<a class="headerlink" href="#reset" title="Permalink to this headline">¶</a></h2>
+<p>Undo a pull or commit:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">reset</span> <span class="o">--</span><span class="n">hard</span> <span class="o">&lt;</span><span class="n">ref</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Or: git reset –hard HEAD~1</p>
+<p>Reset options:</p>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">--soft</span></kbd></td>
+<td>undo last commit but changes stays in working tree (the index) so a git commit will “undo the undo”.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--mixed</span></kbd></td>
+<td>undo last commit but changes stays in staging area, so you’ll need to add the files to commit them.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--hard</span></kbd></td>
+<td>undo everything. Only use if you want to undo a pull.</td></tr>
+</tbody>
+</table>
+<p>Re-write the message from last commit:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">--</span><span class="n">amend</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;new message&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="reverting">
+<h1>Reverting<a class="headerlink" href="#reverting" title="Permalink to this headline">¶</a></h1>
+<dl class="glossary docutils">
+<dt id="term-git-checkout-ref-file1-to-restore-file2-to-restore">git checkout &lt;ref&gt; – file1/to/restore file2/to/restore</dt>
+<dd>Revert specific file</dd>
+<dt id="term-git-checkout-ref-1-file1-to-restore-file2-to-restore">git checkout &lt;ref&gt;~1 – file1/to/restore file2/to/restore</dt>
+<dd>If you want to revert to the commit before eg. c5f567, append ~1</dd>
+</dl>
+<p>Revert specific file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">&lt;</span><span class="n">ref</span><span class="o">&gt;</span> <span class="o">--</span> <span class="n">file1</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">restore</span> <span class="n">file2</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">restore</span>
+</pre></div>
+</div>
+<p>If you want to revert to the commit before c5f567, append ~1</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">&lt;</span><span class="n">ref</span><span class="o">&gt;~</span><span class="mi">1</span> <span class="o">--</span> <span class="n">file1</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">restore</span> <span class="n">file2</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">restore</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h1>Checkout<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
+<dl class="glossary docutils">
+<dt id="term-git-clean">git clean</dt>
+<dd>checkout all untracked files</dd>
+</dl>
+<div class="section" id="clean">
+<h2>clean<a class="headerlink" href="#clean" title="Permalink to this headline">¶</a></h2>
+<p>Checkout all untracked files:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clean</span> <span class="p">[</span><span class="n">options</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Options:</p>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-n</span></kbd></td>
+<td>shows what to get deleted</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-d</span></kbd></td>
+<td>remove directories</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-f</span></kbd></td>
+<td>delete them</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="merge-conflicts">
+<h1>Merge conflicts<a class="headerlink" href="#merge-conflicts" title="Permalink to this headline">¶</a></h1>
+<dl class="glossary docutils">
+<dt id="term-git-merge-abort">git merge –abort</dt>
+<dd>Aborting a merge in case a conflict appears</dd>
+<dt id="term-git-checkout-ours-file-to-checkout">git checkout –ours file-to-checkout<dt id="term-git-checkout-theirs-file-to-checkout">git checkout –theirs file-to-checkout</dt>
+<dd>Choosing either side of a merge conflict</dd>
+</dl>
+<p>Example of file with merge conflict in an example file index.html:</p>
+<pre class="literal-block">
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD:index.html
+everything here is my part (above the ====)
+<cite>=======</cite>
+everything here (below the ====)is from the iss53 branch
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; iss53:index.html
+</pre>
+<p>Can be edited manually, or using git mergetool</p>
+<div class="section" id="aborting-merge">
+<h2>Aborting merge<a class="headerlink" href="#aborting-merge" title="Permalink to this headline">¶</a></h2>
+<p>Aborting a merge in case a conflict appears:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">merge</span> <span class="o">--</span><span class="n">abort</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="choosing-sides">
+<h2>Choosing sides<a class="headerlink" href="#choosing-sides" title="Permalink to this headline">¶</a></h2>
+<p>Choosing either side of a merge conflict:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">--</span><span class="n">ours</span> <span class="n">file</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">checkout</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="o">--</span><span class="n">theirs</span> <span class="n">file</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">checkout</span>
+</pre></div>
+</div>
+<p>get better comparison of merge conflict:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">--</span><span class="n">conflict</span><span class="o">=</span><span class="n">diff3</span> <span class="n">index</span><span class="o">.</span><span class="n">html</span>
+</pre></div>
+</div>
+<p>(can be set permanently: git config –global merge.conflictstyle diff3 (default conflictstyle is ‘merge’))</p>
+</div>
+</div>
+<div class="section" id="stashing">
+<h1>Stashing<a class="headerlink" href="#stashing" title="Permalink to this headline">¶</a></h1>
+<dl class="glossary docutils">
+<dt id="term-git-stash-list">git stash list</dt>
+<dd>lists all stashes</dd>
+<dt id="term-git-stash-save-message-here">git stash save “message here”</dt>
+<dd>add message to stash to remember what you did</dd>
+</dl>
+<div class="section" id="stash">
+<h2>stash<a class="headerlink" href="#stash" title="Permalink to this headline">¶</a></h2>
+<p>lists all stashes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">stash</span> <span class="nb">list</span>
+</pre></div>
+</div>
+<p>add message to stash to remember what you did:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">stash</span> <span class="n">save</span> <span class="s2">&quot;message here&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Emil Westin.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'May 13 2018',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
