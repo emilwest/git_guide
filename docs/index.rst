@@ -376,6 +376,8 @@ Stashing
 
 stash
 -----
+https://git-scm.com/docs/git-stash 
+to include untracked files into stash, add them to index first with git add
 
 lists all stashes::
 
@@ -384,3 +386,12 @@ lists all stashes::
 add message to stash to remember what you did::
 
  git stash save "message here" 
+ 
+get most recent stash::
+
+ git stash pop
+ 
+show diff of files in specific stash (or most recent if no stash specified)::
+
+ git stash show -p stash@{1}
+ 
