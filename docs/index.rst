@@ -99,8 +99,9 @@ Pull from specific branch::
  git pull origin <branch-to-pull>
 
 For example:
-git pull origin HEAD # pulls from origin (the url of the remote repository) the branch your currently on (HEAD)
-git pull origin other/branch # pulls from origin a branch called 'other/branch'
+ git pull origin HEAD # pulls from origin (the url of the remote repository) the branch your currently on (HEAD)
+
+ git pull origin other/branch # pulls from origin a branch called 'other/branch'
 
 
 push
